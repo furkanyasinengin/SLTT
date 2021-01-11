@@ -5,9 +5,9 @@ from tkinter.ttk import Combobox
 import canlı_algılama
 
 window = Tk()
-photo = PhotoImage(file="dosyalar/fotograflar/ilk_ekran_deneme2.png")
+photo = PhotoImage(file="dosyalar/fotograflar/ilk_ekran.png")
 w = Label(window, image=photo)
-window.iconbitmap("dosyalar/fotograflar/ilk_ekran_deneme2.ico")
+window.iconbitmap("dosyalar/fotograflar/ilk_ekran.ico")
 photo_basla=PhotoImage(file="dosyalar/fotograflar/basla.png")
 photo_info=PhotoImage(file="dosyalar/fotograflar/info.png")
 photo_ayarlar=PhotoImage(file="dosyalar/fotograflar/ayarlar.png")
