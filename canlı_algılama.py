@@ -17,7 +17,6 @@ def canlı_algılama():
     label_dict = {}
     for i in range(0, 10):
         label_dict[i] = k[i]
-        print(label_dict[i])
     r = ['aferin', 'araba', 'arkadas', 'bakkal', 'benim', 'bilgisayar', 'ders', 'durust', 'duymak', 'gulmek',
          'gunaydin', 'hastane', 'hesap', 'hızlı', 'icin', 'ihtiyac', 'ileri', 'insallah', 'internet', 'isim',
          'isitme cihazı', 'isitme engelli', 'istanbul', 'kafa', 'kardes', 'kirli', 'kitap', 'kolonya', 'konusmak',
@@ -65,9 +64,21 @@ def canlı_algılama():
         prediction = np.array(model.predict(frame_for_model))
         predicted_class = classes[prediction.argmax()]
         print(predicted_class)
+        with open("dosyalar/ayarlar/renk.txt", "r") as dosya:
+            renk = dosya.readline()
 
-        font = ImageFont.truetype("verdana.ttf", 40)
-        cv.putText(frame, predicted_class, (10, 450), 1, 2, (255, 255, 0), 2, cv.LINE_AA,font)
+        def numbers_to_strings(argument):
+            switcher = {
+                "red": (255,0,0),
+                "blue": (0,0,255),
+                "green": (0,255,0),
+                "yellow": (255,255,0),
+                "black": (0,0,0)
+            }
+            return switcher.get(argument, "nothing")
+        a=numbers_to_strings(renk.lower())
+
+        cv.putText(frame, predicted_class, (10, 450), 1, 2, a, 2, cv.LINE_AA)
         cv.imshow('Canlı Çeviri', frame)
 
 

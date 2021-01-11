@@ -26,6 +26,9 @@ def ayarlar():
     with open("dosyalar/ayarlar/font.txt", "r") as dosya:
         font=dosya.readline()
 
+    with open("dosyalar/ayarlar/renk.txt", "r") as dosya:
+        renk=dosya.readline()
+
     window2 = Tk()
     window2.iconbitmap("dosyalar/fotograflar/ayarlar.ico")
     window2.title("Ayarlar")
@@ -33,14 +36,14 @@ def ayarlar():
     w2= Label(window2, image=photo2)
     w2.pack()
 
-    secenekler=["Calibri","Arial","Verdana"]
-    secenekler2 = ["Sarı","Kırmızı","Yesil","Mavi","Siyah"]
+    secenekler=["Calibri","Arial","Verdana","Forte"]
+    secenekler2 = ["Yellow","Red","Green","Blue","Black"]
 
-    combo1 = Combobox(window2, values=secenekler ,font=font)
+    combo1 = Combobox(window2, values=secenekler ,font=font,foreground=renk.lower())
     combo1.place(x=185, y=190)
     combo1.current(0)
 
-    combo2 = Combobox(window2, values=secenekler2, font=font)
+    combo2 = Combobox(window2, values=secenekler2, font=font,foreground=renk.lower())
     combo2.place(x=185, y=295)
     combo2.current(0)
     def uygula():
@@ -59,7 +62,7 @@ def ayarlar():
 
 
 
-def bilgilendirme():
+def info():
     window2 = Tk()
     window2.iconbitmap("dosyalar/fotograflar/info.ico")
     window2.title("Info")
@@ -80,11 +83,10 @@ def bilgilendirme():
 btn_basla = Button(bg='black',fg='black', image=photo_basla,command=basla,relief=FLAT)
 btn_basla.place(relx=0.5, rely=0.5, anchor=CENTER)
 
-btn_bilgilendirme = Button(bg='black',fg='black', image=photo_info,command=bilgilendirme,relief=FLAT)
-btn_bilgilendirme.place(relx=0.05, rely=0.95, anchor=CENTER)
+btn_info = Button(bg='black',fg='black', image=photo_info,command=info,relief=FLAT)
+btn_info.place(relx=0.05, rely=0.95, anchor=CENTER)
 
 btn_ayarlar = Button(bg='black',fg='black', image=photo_ayarlar,command=ayarlar,relief=FLAT)
 btn_ayarlar.place(relx=0.95, rely=0.05, anchor=CENTER)
 
 window.mainloop()
-

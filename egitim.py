@@ -76,5 +76,3 @@ history = model.fit_generator(
 
 MODEL_NAME = 'modeller/30epoch_v2.h5'
 model.save(MODEL_NAME)
-
-
