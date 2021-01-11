@@ -59,7 +59,7 @@ def ayarlar():
 
 
 
-def info():
+def bilgilendirme():
     window2 = Tk()
     window2.iconbitmap("dosyalar/fotograflar/info.ico")
     window2.title("Info")
@@ -80,8 +80,8 @@ def info():
 btn_basla = Button(bg='black',fg='black', image=photo_basla,command=basla,relief=FLAT)
 btn_basla.place(relx=0.5, rely=0.5, anchor=CENTER)
 
-btn_info = Button(bg='black',fg='black', image=photo_info,command=info,relief=FLAT)
-btn_info.place(relx=0.05, rely=0.95, anchor=CENTER)
+btn_bilgilendirme = Button(bg='black',fg='black', image=photo_info,command=bilgilendirme,relief=FLAT)
+btn_bilgilendirme.place(relx=0.05, rely=0.95, anchor=CENTER)
 
 btn_ayarlar = Button(bg='black',fg='black', image=photo_ayarlar,command=ayarlar,relief=FLAT)
 btn_ayarlar.place(relx=0.95, rely=0.05, anchor=CENTER)
