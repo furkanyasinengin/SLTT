@@ -6,7 +6,6 @@ from tensorflow.keras.applications import InceptionResNetV2
 from tensorflow.keras.optimizers import SGD
 
 TRAINING_DIR = 'D:/veri_seti/veriseti/egitim'
-TEST_DIR = 'D:/veri_seti/test'
 
 
 IMAGE_SIZE = 200
